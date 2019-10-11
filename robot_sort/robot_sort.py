@@ -53,17 +53,6 @@ class SortingRobot:
         while self.can_move_left():
             self.move_left()
 
-    def take_item(self):
-        self._item = self._list[self._position]
-        del self._list[self._position]
-
-    def drop_item(self):
-        self._list.insert(self._position, self._item)
-        self._item = None
-
-    def has_item(self):
-        return self._item is not None
-
     def swap_item(self):
         """
         The robot swaps its currently held item with the list item in front
@@ -123,7 +112,12 @@ class SortingRobot:
         if item in front of the robot is smaller than item held, swap
         Check if there is something smaller until it can't move to the right
         Put item in the first position
+        Repeat until is sorted
         """
+        self.set_light_on()
+        while self.light_is_on():
+            self.take_item()
+
 
 
 if __name__ == "__main__":
