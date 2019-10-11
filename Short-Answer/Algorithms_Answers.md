@@ -11,3 +11,12 @@ b) The runtime is `O(n * sqrt(n))`. The first loop will iterate over `n`, and th
 c) The runtime is `O(n)`. It's a recursive function that is going to be executed `n` times until `bunnies == 0`, and every time the function is returned with `bunnies - 1`, so it will take `n` times to arrive to the base case of the recursion.
 
 ## Exercise II
+
+Pseudocode:
+f = n
+
+Runtime:
+O(1)
+
+Explanation:
+Understanding that a building will have `n` number of floors, floor 0 will be street level and floor n will be the highest floor of the building. If `f` is the highest floor of the building, only the eggs that fall down from `f` will break. The bigger the building is, the more eggs will be protected under `f`.
