@@ -113,14 +113,13 @@ class SortingRobot:
         """
         self.set_light_on()
         while self.light_is_on():
-            if self.has_item() is False:
+            if self.has_item() is False:  # If robot doesn't have an item
                 self.swap_item()
                 if self.can_move_right():
                     self.move_right()
 
-            if self.compare_item() == 1:
+            if self.compare_item() == 1:  # If compared item is smaller than hold item
                 self.swap_item()
-
             else:
                 if self.can_move_right():
                     self.move_right()
@@ -130,7 +129,7 @@ class SortingRobot:
                     if self.can_move_right():
                         self.move_right()
                     else:
-                        self.set_light_off()
+                        self.set_light_off()  # The robot arrived at the end and the array is sorted
 
         return self._list
 
